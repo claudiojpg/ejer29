@@ -1,0 +1,50 @@
+<ion-header>
+  <ion-toolbar> <div style="display: flex; flex-direction: column; align-items: center;">
+    <ion-title> Ejercicio 29-9-2023 </ion-title>
+  </div>
+    
+  </ion-toolbar>
+</ion-header>
+<br>
+<ion-content class="ion-padding">
+  <p>{{ mensajeactual }}</p>
+<ion-input [(ngModel)]="mensajeingresado" label="Escriba un mensaje" label-placement="floating" fill="solid" placeholder=""></ion-input>
+
+<ion-button (click)="sendMessage()">
+  <ion-icon slot="start" name="mail"></ion-icon>
+  Enviar mensaje
+</ion-button>
+<ion-button (click)="limpiarMensaje()">
+  Limpiar mensaje
+  <ion-icon slot="end" name="reload"></ion-icon>
+</ion-button>
+
+<ion-content>
+  <ion-grid *ngIf="personajes">
+    <ion-row>
+      <ion-col size="12" size-md="6" size-lg="4" *ngFor="let personaje of personajes">
+        <ion-card>
+          <img [src]="personaje.image" alt="{{ personaje.name }}"/>
+          <ion-card-header>
+            <ion-card-title>{{ personaje.name }}</ion-card-title>
+          </ion-card-header>
+          <ion-card-content>
+            <p>Especie: {{ personaje.species }}</p>
+            <p>Estado: {{ personaje.status }}</p>
+            <p>Origen: {{ personaje.origin.name }}</p>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
+ 
+</ion-content>
+<ion-footer>
+  <ion-toolbar>
+    <div style="display: flex; flex-direction: column; align-items: center;">
+      <span style="font-size: 12px; font-style: italic;">Developed by DrCV &reg;</span>
+      <span style="font-size: 10px; font-weight: bold;">© 2023</span>
+    </div>
+  </ion-toolbar>
+</ion-footer>
