@@ -1,25 +1,24 @@
 <ion-header>
-  <ion-toolbar> <div style="display: flex; flex-direction: column; align-items: center;">
-    <ion-title> Ejercicio 29-9-2023 </ion-title>
-  </div>
-    
+  <ion-toolbar>
+    <ion-title>Login</ion-title>
   </ion-toolbar>
 </ion-header>
-<br>
-<ion-content class="ion-padding">
-  <p>{{ mensajeactual }}</p>
-<ion-input [(ngModel)]="mensajeingresado" label="Escriba un mensaje" label-placement="floating" fill="solid" placeholder=""></ion-input>
+<ion-content>
+  <form [formGroup]="inicioSesionForm">
+    <ion-list>
+      <ion-item>
+        <ion-label position="floating">Correo Electrónico</ion-label>
+        <ion-input formControlName="correo" type="email" placeholder="formato@correo.com"></ion-input>
+      </ion-item>
 
-<ion-button (click)="sendMessage()">
-  <ion-icon slot="start" name="mail"></ion-icon>
-  Enviar mensaje
-</ion-button>
-<ion-button (click)="limpiarMensaje()">
-  Limpiar mensaje
-  <ion-icon slot="end" name="reload"></ion-icon>
-</ion-button>
-
-
+      <ion-item>
+        <ion-label position="floating">Contraseña</ion-label>
+        <ion-input formControlName="contraseña" type="password" placeholder="****"></ion-input>
+      </ion-item>
+    </ion-list>
+  </form>
+  
+  <ion-button (click)="iniciarSesion()" expand="full" color="primary">Iniciar Sesión</ion-button>
 </ion-content>
 <ion-footer>
   <ion-toolbar>

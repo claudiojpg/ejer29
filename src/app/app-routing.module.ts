@@ -8,7 +8,7 @@ const routes: Routes = [
   },
   {
     path: '',
-    redirectTo: 'home',
+    redirectTo: 'menu',
     pathMatch: 'full'
   },
   {
@@ -18,7 +18,11 @@ const routes: Routes = [
   {
     path: 'rick-and-morty-api',
     loadChildren: () => import('./rick-and-morty-api/rick-and-morty-api.module').then( m => m.RickAndMortyApiPageModule)
+  },  {
+    path: 'login',
+    loadChildren: () => import('./login/login.module').then( m => m.LoginPageModule)
   },
+
 ];
 
 @NgModule({

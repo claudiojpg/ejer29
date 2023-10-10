@@ -1,7 +1,9 @@
 <ion-header>
   <ion-toolbar>
     <ion-title> Personajes</ion-title>
+   
   </ion-toolbar>
+
 </ion-header>
 
 <ion-content>
@@ -25,6 +27,20 @@
 </ion-content>
 <ion-footer>
   <ion-toolbar>
-    <ion-title> Footer </ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button routerLink="/modulo1"></ion-back-button>
+      <ion-button routerLink="/menu" routerDirection="root">
+        <ion-icon slot="start" name="home"></ion-icon>
+       Home
+      </ion-button>
+    </ion-buttons>
+    <ion-footer>
+      <ion-toolbar>
+        <div style="display: flex; flex-direction: column; align-items: center;">
+          <span style="font-size: 12px; font-style: italic;">Developed by DrCV &reg;</span>
+          <span style="font-size: 10px; font-weight: bold;">© 2023</span>
+        </div>
+      </ion-toolbar>
+    </ion-footer>
   </ion-toolbar>
 </ion-footer>
